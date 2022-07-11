@@ -1,0 +1,25 @@
+# Types of blockchain errors
+- coin: tezos
+  errors:
+    # If balance is too low to process.
+    # It checks whether the fee is less than the balance only
+    - type: contract.balance_too_low
+      message: "An operation tried to spend ${blockchain_error.amount} ꜩ while the contract has only ${blockchain_error.balance}"
+
+    # sign a tx with a different private key
+    # [{\"kind\":\"branch\",\"id\":\"proto.011-PtHangz2.implicit.empty_implicit_contract\",\"implicit\":\"tz1emrTiaYzzUtuCZSu3adu8oXSNR2cx8MG7\"}]
+    # no amount or balance in error
+    - type: implicit.empty_implicit_contract
+      message: "Empty implicit contract ${key}"
+
+    # too high gas limit (ie gaslimit:5000000000)
+    # [[{\"kind\":\"permanent\",\"id\":\"proto.011-PtHangz2.gas_limit_too_high\"}]]
+    # no amount or balance in error
+    - type: gas_limit_too_high
+      message: "A transaction tried to exceed the hard limit on gas."
+
+    # too high storage (ie storage:5000000000)
+    # [[{\"kind\":\"permanent\",\"id\":\"proto.011-PtHangz2.storage_limit_too_high\"}]]
+    # no amount or balance in error
+    - type: storage_limit_too_high
+      message: "A transaction tried to exceed the hard limit on storage."

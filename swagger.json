@@ -1,0 +1,13 @@
+{
+  "definition": {
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Tezos Integration",
+      "version": "0.1.0",
+      "description": "Sotez Operation"
+    }
+  },
+  "apis": [
+    "./app/rest/api/*.js"
+  ]
+}
