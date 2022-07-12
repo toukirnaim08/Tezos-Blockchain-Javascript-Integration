@@ -17,7 +17,7 @@ exports.KEYCHAIN = {
         nodeUrl6: 'https://testnet-tezos.giganode.io',
         nodeUrl7: 'https://rpcalpha.tzbeta.net',
 
-        mockNodeUrl: 'http://127.0.0.1:5000/tezos-service/mock/node',
+        mockNodeUrl: 'http://127.0.0.1:9001' + this.projectTitle.NAME + '/mock/node',
     }
 };
 

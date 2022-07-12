@@ -1,10 +1,10 @@
 const fetch = require('node-fetch');
+const { projectTitle } = require('../../../constants');
 
 module.exports = {
     handler: async (app, req, res) => {
-        const request_path = req.path.replace('/tezos-service/mock/node', '');
+        const request_path = req.path.replace(projectTitle.NAME + '/mock/node', '');
         var expected_payload = null;
-
         // Handle the request
         switch (req.method + request_path) {
             case "GET/chains/main/blocks/head/header":

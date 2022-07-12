@@ -3,8 +3,8 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Tezos Integration",
-      "version": "0.1.0",
-      "description": "Sotez Operation"
+      "version": "1.0.0",
+      "description": "Tezos Integration using Sotez library"
     }
   },
   "apis": [

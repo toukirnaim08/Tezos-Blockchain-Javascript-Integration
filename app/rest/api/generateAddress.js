@@ -19,7 +19,7 @@ module.exports = {
      *           schema:
      *             type: object
      *             properties:
-     *                  key:
+     *                  private_key:
      *                      type: string
      *                      description: (optional) 64 character long hex string, all lowercase
      *                      example: "2267eeff3af4394e574bae8b86763ef95f5e1c22f68cc2636ab1b026b72f5300"
@@ -40,15 +40,15 @@ module.exports = {
      */
     generateAddress: async function (app, req, res) {
         // Validate key if provided
-        if (req.body.key !== undefined && req.body.key !== null) {
-            if (req.body.key.length !== 64) {
+        if (req.body.private_key !== undefined && req.body.private_key !== null) {
+            if (req.body.private_key.length !== 64) {
                 return res.status(400).send({
                     status: 1,
                     message: "Invalid key supplied",
                     result: null,
                 });
             }
-            if (req.body.key !== req.body.key.toLowerCase()) {
+            if (req.body.private_key !== req.body.private_key.toLowerCase()) {
                 return res.status(400).send({
                     status: 2,
                     message: "Invalid key supplied",
@@ -58,7 +58,7 @@ module.exports = {
         }
 
         // Grab the mnemonic(key) if provided
-        var mnemonic = req.body.key || null;
+        var mnemonic = req.body.private_key || null;
 
         // Generate new mnemonic if not provided
         if (mnemonic === null) {

@@ -21,6 +21,9 @@ test("1", () => {
         .send(body)
         .then(response => {
             // Validate if we have valid response
-            expect(response.statusCode).toBe(400);
+            expect(response.statusCode).toBe(200);
+            
+            expect(response.body.hash).toBe('onzXEzuigrHW8NCFndiUJxeME58HSs6tr6LBbjwPSKuiouZ9Mpc');
+            expect(response.body.error).toBe(null);
         });
 });

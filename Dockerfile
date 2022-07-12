@@ -24,5 +24,7 @@ COPY --chown=${APP_USER}:${APP_USER} . ./
 
 USER ${APP_USER}
 
+EXPOSE 9001
+
 # Define entrypoint
 ENTRYPOINT [ "npm", "run", "docker" ]

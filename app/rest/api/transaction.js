@@ -11,7 +11,7 @@ const { transaction_validation_schema } = require('./validation');
 const { KEYCHAIN, errorTypes } = require('../../../constants');
 
 // Load error maps
-const [error_map] = load(readFileSync(resolve(__dirname, '../../../error_map.yml')));
+const [error_types] = load(readFileSync(resolve(__dirname, '../../../error_types.yml')));
 
 var tzRpcUrl = process.env.NODE_ENV === 'test' ? KEYCHAIN.tezos.mockNodeUrl : (process.env.TZ_RPC_URL || KEYCHAIN.tezos.nodeUrl2);
 
@@ -54,8 +54,6 @@ module.exports = {
      *                         type: string
      *                         description: tx hash.
      *                         example: "oog4LXx769tBfYWvn6vaD79jmZdSxQK8PwnK2xmYBggLtZxaysR"
-     *                       error:
-     *                         $ref: '#/components/schemas/error'
      *               required: [sender, key, transaction]
      *       400:
      *         description: Invalid payload.
@@ -206,14 +204,14 @@ function create_error_message(app, blockchain_error, key) {
     if (typeof blockchain_error == 'undefined')
         return error_messsage
 
-    error_map['errors'].forEach(error => {
+        error_types['errors'].forEach(error => {
         if (blockchain_error.id.includes(error.type)) {
             error_messsage = render(error.message, { blockchain_error, key })
             is_error_message_changed = true;
         }
     });
 
-    // We have no handler for this error so we need to log it so we can consider it afterwards (to add to error_map.yml)
+    // We have no handler for this error so we need to log it so we can consider it afterwards (to add to error_types.yml)
     if (!is_error_message_changed) {
         app.log.error(`tezos error : [${JSON.stringify(blockchain_error)}]`);
     }

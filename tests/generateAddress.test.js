@@ -5,7 +5,7 @@ const app = require("../app");
 test("1", async () => {
     const url = "/tezos-integration/generate-address";
     const body = {
-        key: "2267eeff3af4394e574bae8b86763ef95f5e1c22f68cc2636ab1b026b72f5300",
+        private_key: "2267eeff3af4394e574bae8b86763ef95f5e1c22f68cc2636ab1b026b72f5300",
     };
 
     return request(app)
@@ -48,7 +48,7 @@ test("2", async () => {
 test("3", async () => {
     const url = "/tezos-integration/generate-address";
     const body = {
-        key: "67eeff3af4394e574bae8b86763ef95f5e1c22f68cc2636ab1b026b72f5300",
+        private_key: "67eeff3af4394e574bae8b86763ef95f5e1c22f68cc2636ab1b026b72f5300",
     };
 
     return request(app)
@@ -64,7 +64,7 @@ test("3", async () => {
 test("4", async () => {
     const url = "/tezos-integration/generate-address";
     const body = {
-        key: "2267EEFF3AF4394E574BAE8B86763EF95F5E1C22F68CC2636AB1B026B72F5300",
+        private_key: "2267EEFF3AF4394E574BAE8B86763EF95F5E1C22F68CC2636AB1B026B72F5300",
     };
 
     return request(app)

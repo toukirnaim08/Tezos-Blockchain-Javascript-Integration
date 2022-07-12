@@ -1,5 +1,5 @@
 {
-  "name": "tezos-service",
+  "name": "tezos-integration",
   "version": "1.0.0",
   "description": "Tezos Integration",
   "main": "server.js",
@@ -27,6 +27,6 @@
     "jest": "^27.3.1",
     "mock-socket": "^9.0.8",
     "superagent": "^6.1.0",
-    "supertest": "^6.1.6"
+    "supertest": "^6.2.4"
   }
 }
