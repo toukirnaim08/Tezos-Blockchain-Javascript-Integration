@@ -39,6 +39,12 @@ npm install
 npm start
 ```
 
+# Running Tests
+
+```
+npm test
+```
+
 # Building Docker image
 ```bash
 ./run_docker_build_prod.sh
