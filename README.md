@@ -47,7 +47,7 @@ npm test
 
 # Building Docker image
 ```bash
-./run_docker_build_prod.sh
+./build_docker_image.sh
 ```
 
 # Swagger UI URL
